@@ -7,7 +7,7 @@ Quick smoke test:   python train_unsloth.py --max_steps 30 --eval_n 20 --no_gguf
 Full run (8GB GPU): python train_unsloth.py
 48GB+ GPU (RunPod): python train_unsloth.py --bf16_base --batch 16 --grad_accum 1
 """
-import argparse, json, os, random
+import argparse, json, os, random, re
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -98,7 +98,8 @@ for ex in test[:args.eval_n]:
     ids = (ids["input_ids"] if hasattr(ids, "keys") else ids).to("cuda")
     gen = model.generate(input_ids=ids, attention_mask=torch.ones_like(ids), max_new_tokens=256,
                          do_sample=False, repetition_penalty=1.1)
-    hyp = tokenizer.decode(gen[0][ids.shape[1]:], skip_special_tokens=True).strip()
+    hyp = tokenizer.decode(gen[0][ids.shape[1]:], skip_special_tokens=True)
+    hyp = re.sub(r"<think>.*?</think>", "", hyp, flags=re.S).strip()  # Qwen3 template adds empty think tags
     d = "t2e" if "English:" in msgs[-1]["content"].split("\n")[0] or "in English" in msgs[-1]["content"] else "e2t"
     res[d][0].append(hyp); res[d][1].append(ref)
     samples.append({"dir": d, "src": msgs[-1]["content"], "ref": ref, "hyp": hyp})

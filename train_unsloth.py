@@ -121,7 +121,7 @@ if not args.no_gguf:
         f'FROM ./{gguf.resolve().relative_to(out_dir.resolve()).as_posix()}\n'
         'TEMPLATE """{{- if .System }}<|im_start|>system\n{{ .System }}<|im_end|>\n{{ end }}'
         '{{- range .Messages }}<|im_start|>{{ .Role }}\n{{ .Content }}<|im_end|>\n{{ end }}'
-        '<|im_start|>assistant\n"""\n'
+        '<|im_start|>assistant\n<think>\n\n</think>\n\n"""\n'  # match training format
         'SYSTEM "You are an expert translator between Thadou-Kuki (Thado Chin) and English."\n'
         'PARAMETER temperature 0.2\nPARAMETER stop "<|im_end|>"\n', encoding="utf-8")
     print(f"\nOllama: ollama create thadou -f {out_dir / 'Modelfile'}\n"

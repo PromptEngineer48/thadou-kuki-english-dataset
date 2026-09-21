@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;  charset=UTF-8" />
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAM</title>
+    <link rel="stylesheet" href="/digital/media/dam/dam.css">
+    <script async defer src="/digital/media/altcha/altcha.min.js" type="module"></script>
+</head>
+<body>
+    <div id="altcha-content">
+        <h1><img src="/digital/media/assets/public/images/dl/favicons/favicon.ico"> digital.library.unt.edu</h1>
+        <h2>Validating your request...</h2>
+        <div>
+            <form id="altcha-submission">
+                <input type="hidden" name="csrfmiddlewaretoken" value="9pBWa5sWeGJDk13iXDhW4Kuakk5dSTEv0wak723HuNntkzXeBClgC2dtn2FDnp4W">
+                <altcha-widget id="altcha"></altcha-widget>
+            </form>
+        </div>
+        
+            <h3>This may take several seconds. Please do not refresh this page. If you are unable to reach our site content, please <a href="https://digital.library.unt.edu/feedback/?cat=Technical+Issue&user_feedback=Altcha+Challenge+Issue+Details%3A">let us know</a>.</h3>
+        
+    </div>
+    <script type="text/javascript">
+        window.addEventListener("load", () => {
+            document.querySelector("#altcha").configure({
+                challenge: {
+                    algorithm: "SHA-256",
+                    challenge: "54d1262786c420e2f69d9f916885006c37e93bdf2b5c5e3e7c4b3766e4c5f18d",
+                    salt: "ffa547cdec008d31c2a650eb?expires=1789965676",
+                    signature: "c816aa98f8fee2ca37c1d801cab9a49b093161e109713fe60e1f41fcbf9b39b8",
+                    maxnumber: "500000",
+                },
+                auto: "none",
+                debug: false,
+                delay: 0,
+                hidefooter: true,
+                hidelogo: false,
+            });
+        });
+        document.querySelector("altcha-widget").addEventListener("statechange", async (e) => {
+            await e.detail;
+            if (e.detail.state === "verified") {
+                const challengeData = new FormData(document.forms["altcha-submission"]);
+                try {
+                   const response = await fetch("/dam/submit/", {
+                        method: "POST",
+                        body: challengeData,
+                    });
+                    const result = await response.json();
+                    if ("success" in result) {
+                        window.location.replace("/ark:/67531/metadc2645244/");
+                    } else {
+                        document.getElementById('altcha-content').innerHTML = `${result.error} This may take several seconds. Please do not refresh this page. If you are unable to reach our site content, please <a href="https://digital.library.unt.edu/feedback/?cat=Technical+Issue&user_feedback=Altcha+Challenge+Issue+Details%3A">let us know</a>.`;
+                    }
+                } catch (error) {
+                    document.getElementById('altcha-content').innerHTML = `${error} This may take several seconds. Please do not refresh this page. If you are unable to reach our site content, please <a href="https://digital.library.unt.edu/feedback/?cat=Technical+Issue&user_feedback=Altcha+Challenge+Issue+Details%3A">let us know</a>.`;
+                    console.error("Challenge submission error:", error);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

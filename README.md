@@ -89,3 +89,5 @@ cd runs/thadou-qwen3-4b/gguf_gguf && ollama create thadou -f Modelfile
 ollama run thadou "Thadou-Kuki to English:\n\nKapa le kanu chu inn ah aum uve."
 ```
 Known weakness: Bible-only data, so everyday sentences drift into scripture phrasing.
+
+Hugging Face (private): https://huggingface.co/Prompt48/thadou-kuki-qwen3-4b-lora (LoRA + Q4_K_M GGUF + Modelfile)

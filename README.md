@@ -62,3 +62,13 @@ ollama create thadou -f runs/thadou-qwen3-4b/Modelfile
 ```
 Default: `unsloth/Qwen3-4B-Instruct-2507`, 4-bit, LoRA r=32, fits 8 GB VRAM. Loss only on assistant turns.
 Output in `runs/`: `lora/`, `eval.json` (chrF++/BLEU per direction on unseen books + samples), `gguf/`, `Modelfile`.
+
+### RunPod (48GB GPU, e.g. A40)
+Use image `runpod/pytorch:2.8.0-py3.11-cuda12.8.1-cudnn-devel-ubuntu22.04`, then:
+```bash
+pip install unsloth sacrebleu
+# pip pulls cu130 torch; pod driver is CUDA 12.8 -> reinstall matching wheels:
+pip install --force-reinstall --no-deps torch torchvision torchaudio triton --index-url https://download.pytorch.org/whl/cu128
+nohup python train_unsloth.py --bf16_base --batch 16 --grad_accum 1 > train.log 2>&1 &
+```
+A40: 5,953 steps ~1h45m (~$1 at $0.49/hr). 16-bit base avoids the 4-bit checkpoint's degenerate output.

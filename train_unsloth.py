@@ -5,7 +5,7 @@ Steps: load 4-bit model -> LoRA -> SFT on out/train.jsonl (loss on assistant tur
 
 Quick smoke test:   python train_unsloth.py --max_steps 30 --eval_n 20 --no_gguf
 Full run (8GB GPU): python train_unsloth.py
-Bigger GPU:         python train_unsloth.py --model unsloth/Qwen3-8B --batch 8 --grad_accum 2
+48GB+ GPU (RunPod): python train_unsloth.py --bf16_base --batch 16 --grad_accum 1
 """
 import argparse, json, os, random
 from pathlib import Path
@@ -26,6 +26,7 @@ p.add_argument("--out", default=str(ROOT / "runs" / "thadou-qwen3-4b"))
 p.add_argument("--gguf_quant", default="q4_k_m")
 p.add_argument("--no_gguf", action="store_true")
 p.add_argument("--resume", action="store_true")
+p.add_argument("--bf16_base", action="store_true")      # 16-bit LoRA instead of QLoRA (needs ~2.5x VRAM)
 args = p.parse_args()
 
 from unsloth import FastLanguageModel  # must import before transformers/trl
@@ -39,7 +40,8 @@ out_dir.mkdir(parents=True, exist_ok=True)
 
 # ---------- 1. model ----------
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name=args.model, max_seq_length=args.max_seq, load_in_4bit=True)
+    model_name=args.model, max_seq_length=args.max_seq,
+    load_in_4bit=not args.bf16_base, load_in_16bit=args.bf16_base)
 model = FastLanguageModel.get_peft_model(
     model, r=args.lora_r, lora_alpha=args.lora_r, lora_dropout=0, bias="none",
     target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
@@ -115,7 +117,7 @@ if not args.no_gguf:
     model.save_pretrained_gguf(str(out_dir / "gguf"), tokenizer, quantization_method=args.gguf_quant)
     gguf = next((out_dir / "gguf").glob("*.gguf"), None) or next(out_dir.glob("*.gguf"))
     (out_dir / "Modelfile").write_text(
-        f'FROM {gguf.resolve()}\n'
+        f'FROM ./{gguf.resolve().relative_to(out_dir.resolve()).as_posix()}\n'
         'TEMPLATE """{{- if .System }}<|im_start|>system\n{{ .System }}<|im_end|>\n{{ end }}'
         '{{- range .Messages }}<|im_start|>{{ .Role }}\n{{ .Content }}<|im_end|>\n{{ end }}'
         '<|im_start|>assistant\n"""\n'

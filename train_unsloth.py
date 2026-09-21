@@ -116,13 +116,14 @@ print(json.dumps(report, indent=2))
 # ---------- 5. export for offline use ----------
 if not args.no_gguf:
     model.save_pretrained_gguf(str(out_dir / "gguf"), tokenizer, quantization_method=args.gguf_quant)
-    gguf = next((out_dir / "gguf").glob("*.gguf"), None) or next(out_dir.glob("*.gguf"))
+    gguf = next(out_dir.rglob("*.gguf"))  # Unsloth writes to gguf_gguf/
     (out_dir / "Modelfile").write_text(
         f'FROM ./{gguf.resolve().relative_to(out_dir.resolve()).as_posix()}\n'
         'TEMPLATE """{{- if .System }}<|im_start|>system\n{{ .System }}<|im_end|>\n{{ end }}'
         '{{- range .Messages }}<|im_start|>{{ .Role }}\n{{ .Content }}<|im_end|>\n{{ end }}'
-        '<|im_start|>assistant\n<think>\n\n</think>\n\n"""\n'  # match training format
+        '<|im_start|>assistant\n"""\n'  # model emits its own empty think block; Ollama strips it
         'SYSTEM "You are an expert translator between Thadou-Kuki (Thado Chin) and English."\n'
-        'PARAMETER temperature 0.2\nPARAMETER stop "<|im_end|>"\n', encoding="utf-8")
+        'PARAMETER temperature 0.2\nPARAMETER repeat_penalty 1.1\n'
+        'PARAMETER stop "<|im_end|>"\nPARAMETER stop "<|im_start|>"\n', encoding="utf-8")
     print(f"\nOllama: ollama create thadou -f {out_dir / 'Modelfile'}\n"
           '        ollama run thadou "Thadou-Kuki to English:\\n\\nPathen in vannoi angailut ahi."')

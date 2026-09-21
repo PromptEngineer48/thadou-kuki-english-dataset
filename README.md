@@ -72,3 +72,20 @@ pip install --force-reinstall --no-deps torch torchvision torchaudio triton --in
 nohup python train_unsloth.py --bf16_base --batch 16 --grad_accum 1 > train.log 2>&1 &
 ```
 A40: 5,953 steps ~1h45m (~$1 at $0.49/hr). 16-bit base avoids the 4-bit checkpoint's degenerate output.
+
+## Results: thadou-qwen3-4b (v1, 2026-09-21)
+Qwen3-4B-Instruct-2507, 16-bit LoRA r=32, 1 epoch (5,953 steps, batch 16) on RunPod A40: 1h48m, $1.26.
+Eval loss 2.64 (step 500) → 1.85 (end). Held-out books (Ruth, Jonah, Philippians, Jude, 3 John), 200 sentences:
+
+| Direction | chrF++ | BLEU |
+|---|---|---|
+| Thadou → English | 28.8 | 9.7 |
+| English → Thadou | 31.2 | 4.4 |
+
+`results/thadou-qwen3-4b/`: eval.json (all 200 outputs), Modelfile, train_metrics.log.
+Weights (not in git, too large): `runs/thadou-qwen3-4b/lora/` (264 MB adapter), `gguf_gguf/*.Q4_K_M.gguf` (2.5 GB).
+```bash
+cd runs/thadou-qwen3-4b/gguf_gguf && ollama create thadou -f Modelfile
+ollama run thadou "Thadou-Kuki to English:\n\nKapa le kanu chu inn ah aum uve."
+```
+Known weakness: Bible-only data, so everyday sentences drift into scripture phrasing.

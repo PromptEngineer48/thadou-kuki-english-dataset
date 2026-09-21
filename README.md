@@ -50,3 +50,15 @@ Bible-only data gives archaic/religious register. For conversational quality add
 
 Could not auto-download (do by hand in a browser): BSI PDF on bibliamundi (503/SSL), mchip PDF (dead),
 globalrecordings.net (403), UNT book (viewer only), YouVersion THADBSI (copyright, ask BSI).
+
+## Finetuning (Unsloth QLoRA)
+```bash
+python -m venv .venv && .venv/Scripts/pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+.venv/Scripts/pip install -r requirements-train.txt
+.venv/Scripts/python check_dataset.py                                 # schema / length / leakage check
+.venv/Scripts/python train_unsloth.py --max_steps 30 --eval_n 20 --no_gguf   # smoke test
+.venv/Scripts/python train_unsloth.py                                 # full: 1 epoch, eval, GGUF, Modelfile
+ollama create thadou -f runs/thadou-qwen3-4b/Modelfile
+```
+Default: `unsloth/Qwen3-4B-Instruct-2507`, 4-bit, LoRA r=32, fits 8 GB VRAM. Loss only on assistant turns.
+Output in `runs/`: `lora/`, `eval.json` (chrF++/BLEU per direction on unseen books + samples), `gguf/`, `Modelfile`.

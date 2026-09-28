@@ -100,3 +100,27 @@ ollama run thadou "Thadou-Kuki to English:\n\nKapa le kanu chu inn ah aum uve."
 Known weakness: Bible-only data, so everyday sentences drift into scripture phrasing.
 
 Hugging Face (private): https://huggingface.co/Prompt48/thadou-kuki-qwen3-4b-lora (LoRA + Q4_K_M GGUF + Modelfile)
+
+## Results: thadou-qwen3-4b-v2 (2026-09-28)
+Same recipe as v1 but on the 173,845-example dataset (3 Thadou translations x 3 English). RunPod A40, 2h21m,
+10,866 steps. Eval loss 2.74 → **1.802** (v1: 1.85, identical eval set).
+
+Held-out books, 150 verses, chrF++, scored against BOTH reference wordings (`results/*/multiref_*.json`):
+
+| Direction | reference | v1 | v2 |
+|---|---|---|---|
+| English → Thadou | Chongthu | 32.5 | 32.4 |
+| English → Thadou | BSI | 33.6 | **36.9** |
+| English → Thadou | either | 35.6 | **38.4** |
+| Thadou → English | WEB | **32.0** | 30.8 |
+| Thadou → English | NIV | **28.4** | 27.8 |
+| Thadou → English | either | **32.8** | 31.8 |
+
+The single-reference test set scores v1/v2 as a tie (28.8/31.2 vs 28.7/31.4) because it only accepts the
+Chongthu+WEB wording. Scored fairly, **v2 writes better Thadou (+2.8) in the standard BSI style**, while
+**v1 reads Thadou slightly better (+1.0)**. v2 is the better default; v1 is kept for tcz→en.
+
+Ollama: `thadou` (v1), `thadou-v2`. Hugging Face (private): `Prompt48/thadou-kuki-qwen3-4b-lora-v2`.
+
+**Lesson:** adding a third Bible mostly changed *which* Bible style the model imitates. Everyday
+native-speaker sentences remain the real bottleneck.

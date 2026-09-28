@@ -1,0 +1,316 @@
+{
+  "scores": {
+    "t2e": {
+      "n": 101,
+      "chrF++": 28.67,
+      "BLEU": 8.58
+    },
+    "e2t": {
+      "n": 99,
+      "chrF++": 31.42,
+      "BLEU": 5.05
+    }
+  },
+  "samples": [
+    {
+      "dir": "e2t",
+      "src": "Say this in Thadou-Kuki:\n\nWhat does it matter? Only that in every way, whether in pretense or in truth, Christ is proclaimed. I rejoice in this, yes, and will rejoice.",
+      "ref": "Hinlah hichu imacha akhohpoi. Alung gonu chu dihlou hihen, adih hijongleh, Christa thuchu akiseiphong poule kipah a kahi. Chule kipah jomnalai ding kahi.",
+      "hyp": "Ipi kisei ding ham? Pathen Lhagao Thengin thutah le lhemlha tah a Christa thu ahung seiphong jing vang'in ipi phachomna um'em ti kahepoi. Hiche hi keima dia kipana lentah ahi! Keiman hichu kakipa thanop na hiding ahi."
+    },
+    {
+      "dir": "t2e",
+      "src": "Thadou-Kuki to English:\n\nDanthu juina a keima chonphatna chu hitalouva Amatoh thakhat kahia hitia chu keima Christa tahsan jal a chonpha eikisima ahitai. Ajeh chu tahsan jal'a Pathen in eiho chonpha a eisemu ahitai.",
+      "ref": "and be found in him, not having a righteousness of my own, that which is of the law, but that which is through faith in Christ, the righteousness which is from God by faith,",
+      "hyp": "For by grace you have been saved through faith, and that not of yourselves; it is the gift of God,"
+    },
+    {
+      "dir": "e2t",
+      "src": "Say this in Thadou-Kuki:\n\nNow I desire to have you know, brothers, that the things which happened to me have turned out rather to the progress of the Good News,",
+      "ref": "Chule kasopite, nanghon kahinkhoa ahung sohsaho chengse chu ipipen chu hita jongleh Kipana Thupha machalsahna dinga soh ahi tihi nahet dingu kadeiyin ahi.",
+      "hyp": "Sopite ho, kahinna thilsoh chengse hi Kipana Thupha lama phachom ahi ti nahet dingu ka-ngaito ahi;"
+    },
+    {
+      "dir": "t2e",
+      "src": "Thadou-Kuki to English:\n\nTahsaphea cheptan kisonpi ding hijongle kiphat lamna kaneipoi. Khattouvin tahsaphea cheptan chu akisonpi dingle ken kakheljoi.",
+      "ref": "though I myself might have confidence even in the flesh. If any other man thinks that he has confidence in the flesh, I yet more:",
+      "hyp": "I have no reason for boasting, except in the work of those who make it their boast—my opponents themselves! In this I am not ashamed, but I do not count my efforts as such."
+    },
+    {
+      "dir": "t2e",
+      "src": "Translate this Thadou-Kuki text into English:\n\nIsraelte lah a thutan vaihom hon vai ahoplaijun gamsung’a kel nasatah ahung lhungtan ahi. Hijeh chun Bethlehem akonnin Juda mi khatnin ajinu leh achateni akipuijin Moab gam’ah cheng ding in achetan ahi.",
+      "ref": "In the days when the judges judged, there was a famine in the land. A certain man of Bethlehem Judah went to live in the country of Moab with his wife and his two sons.",
+      "hyp": "The famine was very severe in the land, so that one man went to another, and two men went together; and they came to Bethlehem Judah, where there was a certain Levite who had a wife and two sons."
+    },
+    {
+      "dir": "t2e",
+      "src": "Translate this Thadou-Kuki text into English:\n\nAjeh chu mi- dang hon amaho ding jeng bou aki-hol’uvin, Jesu Christa thudol’a imacha agelkhoh pouve.",
+      "ref": "For they all seek their own, not the things of Jesus Christ.",
+      "hyp": "For they were seeking to arrest him, but no one laid hands on him because of the fear that the people might take it upon themselves to stone him."
+    },
+    {
+      "dir": "e2t",
+      "src": "English to Thadou-Kuki:\n\nThese are hidden rocky reefs in your love feasts when they feast with you, shepherds who without fear feed themselves; clouds without water, carried along by winds; autumn trees without fruit, twice dead, plucked up by the roots;",
+      "ref": "Hiche mihotoh hin Pakai ngailutna geldohna a an nehkhom nanei tengu leh, amaho hi twinoiya songpi um tobang, nakong'u kesah thei ahiuve. Amaho hi jachatna neilou kelngoi ching amabou kikhohsah ho ahiuve. Amaho hi leiset chung lama hung kitol lea ahiala go a julhalou meibol tobangbep ahiuve. Amaho hi chavang laiya thingphung, nivei thisa, aga sodohlou ajung geiya kibotdoh tobang ahiuve.",
+      "hyp": "Nangma koma umho chu nangma ngailutna a songpi ho tobanga akisel jiuva chuleh amaho chu nakelngoi hon banga nagancha hotoh kichatna beihela anehkhomjiu ahi. Amahon twi neilou meibol leh huipi kinongin alhon khomun, aga louhel thingphung bangin ahing uvin, hinla abohlha jengun, atuija konin apal mang gamtauve."
+    },
+    {
+      "dir": "t2e",
+      "src": "What does this mean in English?\n\nAmitakip in naum nauva nabol jouseuva lunggel toh them nahiu hehen. Pakai hungloi tading ahi geldoh un.",
+      "ref": "Let your gentleness be known to all men. The Lord is at hand.",
+      "hyp": "Let your heart remember his wonders, for he has done great things. Remember his wonders of old."
+    },
+    {
+      "dir": "t2e",
+      "src": "Thadou-Kuki to English:\n\nAmaho hi twikhanglen kinong husetah tobang, jachat umtah athilsebol'u twiphon kinotkhom banga umho ahiuve. Amahohi ahsi-somleng tobang ahiuvin, tonsot'a themmo changa muthim lhangkhal kihehlah a dinga gotsa ahiuve.",
+      "ref": "wild waves of the sea, foaming out their own shame; wandering stars, for whom the blackness of darkness has been reserved forever.",
+      "hyp": "They are like the foam of a sea wave; they are like the沫 of waves of the sea, which are driven by the wind on high. They are as the blackness of darkness in the twilight of the sky when the clouds are thick together."
+    },
+    {
+      "dir": "t2e",
+      "src": "Translate this Thadou-Kuki text into English:\n\nAjeh iham itileh Christa natohna a ahinkho ahahsatna ato ahi. Chule nanghon mun gamlatah a kona naboltheilou diu jeh a nangho thalhenga keima dinga aman eibolpeh ahi.",
+      "ref": "because for the work of Christ he came near to death, risking his life to supply that which was lacking in your service toward me.",
+      "hyp": "For he who works in the things of his flesh will be judged by the law, but he who works through the Spirit is judged by the Spirit."
+    },
+    {
+      "dir": "e2t",
+      "src": "Translate this English text into Thadou-Kuki:\n\nYes, and if I am poured out on the sacrifice and service of your faith, I am glad and rejoice with you all.",
+      "ref": "Natahsan jal’uva Pathena thilpeh le natohnaa hin kahinna thisan hi kisung lhahel jongle kakipah-in nabonchauva chunga kakitai piuve.",
+      "hyp": "Natahsanu jal’a kathoh gimna leh kilhaina thilto hoa kachap khompi jeh a chu nangho toh kipah thanop pi ding kahi."
+    },
+    {
+      "dir": "t2e",
+      "src": "Translate this Thadou-Kuki text into English:\n\nAhinla kagenthei pet tah a neikithopiu hi nabolpha lheh-ui.",
+      "ref": "However you did well that you shared in my affliction.",
+      "hyp": "But you have shown kindness in all our distress,"
+    },
+    {
+      "dir": "e2t",
+      "src": "Translate this English text into Thadou-Kuki:\n\nThese are those who cause divisions and are sensual, not having the Spirit.",
+      "ref": "Amaho hi nalahuva kitomona hinsemdoh ho ahiuve. Amaho hin alungsunguva Pathen Lhagao aneilou jeh uva amihinau ngaitona lungput chu ajuiyu ahi.",
+      "hyp": "Hiche ho hi Pathen Lhagao neilou chonset bol ho ahiuve. Amaho hin miho chu kikhentelna le lungthim phalouva akibol sah jiu ahi."
+    },
+    {
+      "dir": "e2t",
+      "src": "English to Thadou-Kuki:\n\nto execute judgment on all, and to convict all the ungodly of all their works of ungodliness which they have done in an ungodly way, and of all the hard things which ungodly sinners have spoken against him.”",
+      "ref": "Mitin chunga thutanna abol ding, chule Pathen helouten a-Pathen hetlou jeh-uva athilbol anatoh chengseu le Pathen hephalou chonseten ama douna thuse asei jouseu themmo ahinchan ding ahi,” ati.",
+      "hyp": "Aman Pathen heloute chunga thutanna abol ding ahi. Ama chonsetna lam jouse leh athilse bol nauva kon'a amaho chu themmo achansah ding ahi,” ati."
+    },
+    {
+      "dir": "t2e",
+      "src": "Thadou-Kuki to English:\n\nNanghoa ngailutna chu aha lonlhah cheh cheh a chule nangho hetna le hetkhenna a nakhantoube chehna dinguva katao ahi.",
+      "ref": "This I pray, that your love may abound yet more and more in knowledge and all discernment,",
+      "hyp": "I pray that the eyes of your heart may be enlightened in order that you may know the hope to which he has called you, the riches of his glorious inheritance in the saints,"
+    },
+    {
+      "dir": "t2e",
+      "src": "Translate this Thadou-Kuki text into English:\n\nChule Pathen mithengte adang dangho jousen salam nahin thot uve, adehset in Caesar insung mitea konin salam napeuve.",
+      "ref": "All the saints greet you, especially those who are of Caesar’s household.",
+      "hyp": "The rest of the holy people also greet you. Greet one another with a kiss of peace."
+    },
+    {
+      "dir": "e2t",
+      "src": "Say this in Thadou-Kuki:\n\nSo the ship master came to him, and said to him, “What do you mean, sleeper? Arise, call on your God! Maybe your God will notice us, so that we won’t perish.”",
+      "ref": "Hichun kong sepai lamkai pa chun Jonah chu aga mudohin ajah a “A imupa ipi nangaito hitam thoudoh in na Pathen henga tauvin chutileh aman ithigam nadiuva konna hi eihuhdoh theidiu ahi” ati.",
+      "hyp": "Chuin kongtolpa chu ahungin ajah a, “Ipi nasei ham, mohseh? thouvin lang na Pathen heng'a hung taovin; chutileh aman eihuhdoh diuva eina hinmu'u mong ding ahi,” ati."
+    },
+    {
+      "dir": "t2e",
+      "src": "What does this mean in English?\n\ntompan jeh a Houbung bolsea pang, them channa dia Danthu lamdol’a nolnabei kahi.",
+      "ref": "concerning zeal, persecuting the assembly; concerning the righteousness which is in the law, found blameless.",
+      "hyp": "I am blameless with respect to the law of God, for I have not transgressed any commandment."
+    },
+    {
+      "dir": "e2t",
+      "src": "English to Thadou-Kuki:\n\nBut I thought it necessary to send to you Epaphroditus, my brother, fellow worker, fellow soldier, and your apostle and servant of my need,",
+      "ref": "Ka-ngailutna kinbol dia na-solchah-u, kaseipai chanpi le toh khompi, sopi Epaphroditus hi na-henguva hinsol loi ding khoh kasa-tai;",
+      "hyp": "Keiman kasopi le kathilbolpi, galbolpi chule nangho solchah le kalhacha dinga thil neija pang Epaphroditus chu nahenguva kasol ding hi phasetna kagel ahi;"
+    },
+    {
+      "dir": "t2e",
+      "src": "Translate this Thadou-Kuki text into English:\n\nIjeh innem itileh, Pathen jengin jong alung hin heijin tin eisuhgimna diuva kon’a eihin dohsah jing theiju ahi, atiuvin ahi.",
+      "ref": "Who knows whether God will not turn and relent, and turn away from his fierce anger, so that we might not perish?”",
+      "hyp": "For God himself testifies to us that no sooner was he put in bonds than immediately he sent him out."
+    },
+    {
+      "dir": "e2t",
+      "src": "English to Thadou-Kuki:\n\nNow this was the custom in former time in Israel concerning redeeming and concerning exchanging, to confirm all things: a man took off his sandal, and gave it to his neighbor; and this was the way of formalizing transactions in Israel.",
+      "ref": "Tun hiche lai khanga chun Isrealte lah a chun che na daan khat anaum in mikhat touvin thil achoh nading athaneina chu mikhat komma apehdoh a ahileh akeng koh chu asutna ama pachu apehding ahi. Hitia chu mipi hetna kikhut lhehna chu kisudetji ahi.",
+      "hyp": "Hiche hi Israel mite chonna dan masanga kibol doh chu ahin, aman akengchot alahdoh jin, hichu agolpa apejin, hitia chu thil kijoh le kilepehna dinga aboljiuva ahi."
+    },
+    {
+      "dir": "t2e",
+      "src": "What does this mean in English?\n\nKasopite, tukalse vang Pakai chunga kipah jingun. Nang ho dia aphat chomjeh-in kasutsa velsut kit ding kachimdehpoi.",
+      "ref": "Finally, my brothers, rejoice in the Lord! To write the same things to you, to me indeed is not tiresome, but for you it is safe.",
+      "hyp": "But as for you, my brothers, don’t be weary of the Lord’s service, nor discouraged by the unbelief of some."
+    },
+    {
+      "dir": "t2e",
+      "src": "Thadou-Kuki to English:\n\nHilai muna kachung thu ipi aso aphotchetna aum tengleh ama nangho henga hinsol ding kati ahi.",
+      "ref": "Therefore I hope to send him at once, as soon as I see how it will go with me.",
+      "hyp": "When I am in prison, then you will receive this letter from me."
+    },
+    {
+      "dir": "t2e",
+      "src": "Translate this Thadou-Kuki text into English:\n\nKongtol ho atija lih gamtauvin, amichan cheh-in ama ama pathen kom cheh a ataovun, panpi athumtauve. Chujongle kong innei chu ajandomna din kong sunga thilkeo chu apaidoh doh tauve. Hichepat tah hin Jonah chu kong tolam indan sunga alut’in khomang meiyin a-ihmui.",
+      "ref": "Then the mariners were afraid, and every man cried to his god. They threw the cargo that was in the ship into the sea to lighten the ship. But Jonah had gone down into the innermost parts of the ship and he was laying down, and was fast asleep.",
+      "hyp": "The mariners were exceedingly afraid, each man crying out to his god; and they threw the goods that were in the ship into the sea, to lighten it. Then Jonah went down into the innermost part of the ship, where he was staying, and lay down and slept."
+    },
+    {
+      "dir": "t2e",
+      "src": "What does this mean in English?\n\nChujou chun Pakai nangin nanga konin neipai dohin, ahijeng vang'in keiman na hou in thenglam kahin ngat kit ding ahi.",
+      "ref": "I said, ‘I have been banished from your sight; yet I will look again toward your holy temple.’",
+      "hyp": "Then you rejected us, and said, ‘I will not build you a house to my name.’ But the LORD has said of me, ‘I have built you a house;’"
+    },
+    {
+      "dir": "e2t",
+      "src": "Translate this English text into Thadou-Kuki:\n\nNevertheless, to the extent that we have already attained, let’s walk by the same rule. Let’s be of the same mind.",
+      "ref": "Hijongle eihon iphah sau chan geihin chon’u hite.",
+      "hyp": "Hijongle keihon kahin juijuva chule hichea hin kachonnau chu kagelkhoh nauvin umuhen; chutileh kalungthim'u jong kibang cheh ding ahi."
+    },
+    {
+      "dir": "t2e",
+      "src": "Thadou-Kuki to English:\n\nHichehi a-puluiyu Perez son achilhah hochu ahung hitaove, Perez hi Hezron pa ahung hin,",
+      "ref": "Now this is the history of the generations of Perez: Perez became the father of Hezron,",
+      "hyp": "These were the sons of Perez: Hezron his son;"
+    },
+    {
+      "dir": "e2t",
+      "src": "Say this in Thadou-Kuki:\n\nto execute judgment on all, and to convict all the ungodly of all their works of ungodliness which they have done in an ungodly way, and of all the hard things which ungodly sinners have spoken against him.”",
+      "ref": "Vannoi mite chungthu tan dinga hung ahi. Aman mitin Pathen ngaisahlouna a athilbol'u le amadouna a jachatsahna dinga athusei dohhouva kona ahetphotsah ding ahi” ati.",
+      "hyp": "Aman Pathen heloute chunga thutanna abol ding ahi. Ama chonsetna lam jouse leh athilse bol nauva kon'a amaho chu themmo achansah ding ahi,” ati."
+    },
+    {
+      "dir": "e2t",
+      "src": "Translate this English text into Thadou-Kuki:\n\nFor they all seek their own, not the things of Jesus Christ.",
+      "ref": "Midangho hin ama ama phattouna ding kigelkhoh'ah ahiuvin Yeshua Christa lam thu chu agelkhoh pouve.",
+      "hyp": "Ijeh-inem itile amaho chun ama cheh dinga aholuvin, Jesu Christa thilho chu ahol pouve."
+    },
+    {
+      "dir": "e2t",
+      "src": "Translate this English text into Thadou-Kuki:\n\nOn some have compassion, making a distinction,",
+      "ref": "Kihol lel lung opkaina neiho chu hepiuvin.",
+      "hyp": "Amaho chu khat cheh in alungset un, hinlah amahon ama ama chunga lungsetna abol’uvin ahi."
+    },
+    {
+      "dir": "e2t",
+      "src": "English to Thadou-Kuki:\n\nBut God prepared a worm at dawn the next day, and it chewed on the vine so that it withered.",
+      "ref": "Ahinla ajing khovah lhah-in umphung chu Pathen thusah-in lungin anen athitai.",
+      "hyp": "Ahin ajing jingkah-in Pathen'in gamsa khat ahin semdoh-in; chule hichun lengpigui chu avotnin, agopmin ahi."
+    },
+    {
+      "dir": "e2t",
+      "src": "Translate this English text into Thadou-Kuki:\n\nNow I desire to remind you, though you already know this, that the Lord, having saved a people out of the land of Egypt, afterward destroyed those who didn’t believe.",
+      "ref": "Khatvei chu nahetsau hitajongle, Pakaiyin mipi chu Egypt’a kona ahuhdoh a, anichan naa atahsan lou jeh-uva asuh mang hel thudol hi nang ho kageldohsah kitnom nahiuve.",
+      "hyp": "Hiche hi nanghon nahetsoh tauve, ahinla keiman kahilchah kit dinga ka-ngaito ahi: Pakaiyin amite chu Egypt gama konin ahuhdoh in chule atahsan louho chu asumang tai."
+    },
+    {
+      "dir": "e2t",
+      "src": "Say this in Thadou-Kuki:\n\nI exhort Euodia, and I exhort Syntyche, to think the same way in the Lord.",
+      "ref": "Euodia le Syntyche chu Pakai jal’a kihoutoh dinga deichom tah a ka-ngeh ahi lhon’e.",
+      "hyp": "Hijeh chun keiman Euodia le Syntyche chu Pakaiya kahilchah ding ahi."
+    },
+    {
+      "dir": "e2t",
+      "src": "Say this in Thadou-Kuki:\n\nBehold, Boaz came from Bethlehem, and said to the reapers, “May the LORD be with you.” They answered him, “May the LORD bless you.”",
+      "ref": "Hitia changkhai ana kichom laipet tah chun Boaz chu Bethlehem’a kon in ahung in “Pakaiyin naumpiu hen,” atin, amahon jong “Pakaiyin phatthei naboh hen” atiuve.",
+      "hyp": "Hichun Boaz chu Bethlehem a konin ahung kilen chang atoh ho jah’a chun, “Pakaiyin na umpi diuvin,” tin asam tan ahileh amaho jong chun adonbut un, “Pakaiyin phattheiboh hen!” atiuve."
+    },
+    {
+      "dir": "t2e",
+      "src": "Translate this Thadou-Kuki text into English:\n\nTutadia dingin Epaphroditus nahenguva hinsol ding kangaito ahi. Amahi sopi dihtah tohkhompi ahi.",
+      "ref": "But I thought it necessary to send to you Epaphroditus, my brother, fellow worker, fellow soldier, and your apostle and servant of my need,",
+      "hyp": "I have sent him to you for this very purpose, that you may know our circumstances and that he may comfort your hearts."
+    },
+    {
+      "dir": "t2e",
+      "src": "Thadou-Kuki to English:\n\nIjeh-inem itile Pathen Lhagaova Pathen chibai boh a Christa Jesu jal’a kisonna nei, tahsaphea kisong lou eiho hi cheptan dihtah ihiuve.",
+      "ref": "For we are the circumcision, who worship God in the Spirit, and rejoice in Christ Jesus, and have no confidence in the flesh;",
+      "hyp": "For we who have believed in the power of God are not circumcised in the flesh by human hands; but in circumcision of the heart, in the Spirit, and not in the letter; whose praise is not from men, nor from you."
+    },
+    {
+      "dir": "e2t",
+      "src": "English to Thadou-Kuki:\n\nThey have testified about your love before the assembly. You will do well to send them forward on their journey in a way worthy of God,",
+      "ref": "Amaho chun hikoma houbung jah a ngailutna neiya nanabolna thu chu aseiyuvin ahi. Hiti chun Pathen lunglhai sahnan hitobang thuhil ho ding chun thilgot pehna neijom teijin.",
+      "hyp": "Amahon houbung ho jouse masanga nangailutna thu ahettohsah-u ahitai; hijeh chun Pathen lungdei lam cheh-a amaho chu asohchanna dinguva nasolpeh ding hi pha lheh-e."
+    },
+    {
+      "dir": "e2t",
+      "src": "Say this in Thadou-Kuki:\n\nBeloved, I pray that you may prosper in all things and be healthy, even as your soul prospers.",
+      "ref": "Deitah, nangma lhagaova nahat banga chu tahsa a jong nadam thei ding hi imalam jousea naphatpet ahiding kaginchat ahi.",
+      "hyp": "Deitahte, nangho lungmona le damna-a um jing dinguva kahung tao ahi; chule hichu nalhagao lhingsetna toh kilhon ding ahi."
+    },
+    {
+      "dir": "e2t",
+      "src": "Translate this English text into Thadou-Kuki:\n\nIf therefore there is any exhortation in Christ, if any consolation of love, if any fellowship of the Spirit, if any tender mercies and compassion,",
+      "ref": "Hiti ahijeh chun Christaa hina jal a kitilkhouna um nam? Angailutna a kona lhamonna um nam? Lhagaova kiloikhomna um nam? Lung nemna le kikhotona um nam?",
+      "hyp": "Christa a kona lung ngamna umle, ngailutna jal’a kipana thupha khat jong ahin, Lhagao chun nangho toh kiloikhomna dinga eihung puiyuva, chule mihepi le hepina neitah a naum’u hi aman aphondoh ahi."
+    },
+    {
+      "dir": "t2e",
+      "src": "Translate this Thadou-Kuki text into English:\n\nKongtol ho akihouvun, “hitobang hamset itolo nau hi koipen ahiding vang san’uhitin holdoh temu hite,” akitiuve. Hitia abol’u le Jonah min ahung potdoh tai.",
+      "ref": "They all said to each other, “Come! Let’s cast lots, that we may know who is responsible for this evil that is on us.” So they cast lots, and the lot fell on Jonah.",
+      "hyp": "The men said to one another, “What shall we do, because this man is not a man of peace? Let’s cast lots.” They cast lots, and the lot fell on Jonah."
+    },
+    {
+      "dir": "e2t",
+      "src": "Say this in Thadou-Kuki:\n\nBeloved, I pray that you may prosper in all things and be healthy, even as your soul prospers.",
+      "ref": "Ngaitah, nahinkhoa phatthei nachan banga, ima lam jousea naphat theiya, nadam jingna din kataopeh jie.",
+      "hyp": "Deitahte, nangho lungmona le damna-a um jing dinguva kahung tao ahi; chule hichu nalhagao lhingsetna toh kilhon ding ahi."
+    },
+    {
+      "dir": "e2t",
+      "src": "Say this in Thadou-Kuki:\n\nThe elder to Gaius the beloved, whom I love in truth.",
+      "ref": "Hiche lekhathot hi upa John a kon ahi. Keiman kagol ngaitah, Gaius, thutah'a kangailut henga kajih ahi.",
+      "hyp": "Kapakai upa ho henga kahin thot ahiuve: Keiman nangho hi tahsan umtah leh ngailutna neitah a nei-ngailu'uva nahiuve."
+    },
+    {
+      "dir": "t2e",
+      "src": "Thadou-Kuki to English:\n\nHichun Boaz in insung kinaipi pen komma chun hiti hin aseitan ahi, “Moab gamma konna hung le hungkit Naomi chu nahen ahi. Amahin ikinaipi Elimelach gamchu ajoh in ahi.",
+      "ref": "He said to the near kinsman, “Naomi, who has come back out of the country of Moab, is selling the parcel of land, which was our brother Elimelech’s.",
+      "hyp": "Boaz said to the elders of his city, “I know that Naomi is a widow, and she has sons-in-law; but they have gone away from her. She has returned to her relatives."
+    },
+    {
+      "dir": "e2t",
+      "src": "Translate this English text into Thadou-Kuki:\n\nthat I may know him and the power of his resurrection, and the fellowship of his sufferings, becoming conformed to his death,",
+      "ref": "Keiman Christa chu kahet nomin, agimthohna chu thoh khoma, athina chu chankhompi kahi theina ding chule Ama thinaa kona kaithoupa thahat thilbol theina chu kachan theina ding kati ahi.",
+      "hyp": "Ama chu kahetna chule athodoh thahatna jong kahe nadinga; Aman gim genthei athohsa ahi ti kahe nading leh ama thina tobanga thina dinga kachan ding ahi."
+    },
+    {
+      "dir": "t2e",
+      "src": "Thadou-Kuki to English:\n\nHitichun Ruth chu akipatdoh in chang-at ho nung langa chun achen, changkhai ho chu achom pan tan ahi. Hitia changkhai achomna loilai chu atehpu Elimelech sopipa Boaz loulai ana hikha in ahi.",
+      "ref": "She went, and came and gleaned in the field after the reapers; and she happened to come to the portion of the field belonging to Boaz, who was of the family of Elimelech.",
+      "hyp": "Ruth went out after the reapers; and the reapers beat up that she should glean in the field behind. Now Boaz was his relative."
+    },
+    {
+      "dir": "e2t",
+      "src": "Say this in Thadou-Kuki:\n\nBut you know that he has proved himself. As a child serves a father, so he served with me in furtherance of the Good News.",
+      "ref": "Hinlah Timothy hin amatah ahinan photchenna aneiyin, hiti hin chapa le apa tobang'in kipana thupha seiphongnaa keimatoh tongkhom ahi ti nanghon naheuve.",
+      "hyp": "Ahinla nanghon ama kipatdoh chu nahetnu ahitai; chapang chun apa jen bangin, Kipana Thupha lama keima toh lhonpi dinga eijen ahi."
+    },
+    {
+      "dir": "t2e",
+      "src": "Thadou-Kuki to English:\n\nHiche lekhathot hi Yeshua Christa soh le Jacob sopipa, Jude a kon ahi. Keiman, nangailu uleh Yeshua Christa venbitna noiya nahongbit jinguvah, Pa Pathen in akouho jouse dinga hiche lekhathot hi kahinjih ahi.",
+      "ref": "Jude, a servant of Jesus Christ, and brother of James, to those who are called, sanctified by God the Father, and kept for Jesus Christ:",
+      "hyp": "This letter is from Jesus Christ’s servant and brother James, to the twelve tribes who are scattered among the nations: Greetings."
+    },
+    {
+      "dir": "t2e",
+      "src": "What does this mean in English?\n\nKeiman taona kamanseh le kipah thanom tah in nangho jouse dingin kathumpeh jiuve.",
+      "ref": "always in every request of mine on behalf of you all, making my requests with joy,",
+      "hyp": "For we always pray for you, making requests that you may be filled with the knowledge of his will through all the wisdom and understanding which God may bestow on you;"
+    },
+    {
+      "dir": "e2t",
+      "src": "Say this in Thadou-Kuki:\n\nShe said, “Behold, your sister-in-law has gone back to her people and to her god. Follow your sister-in-law.”",
+      "ref": "Naomi chun Ruth kom’ah, “Ven, na unu khu a Pathen komleh amite kom’ah akile kittai, nang jong hitia khu naum ding ahi,” ati.",
+      "hyp": "Hichun amanu chun aseiyin, “Ven na sopi nu chu ama mite leh Pathen heng ajon tan, nangman jong na sopinu chu najui tei ding ahi,” ati."
+    },
+    {
+      "dir": "t2e",
+      "src": "Thadou-Kuki to English:\n\nAman athilbol thei thahatna chu thil ijakai hi anoiya akoisoh a, eiho tahsa manmo hi Ama tahsa loupi tah lim’a akhel doh ding ahi.",
+      "ref": "who will change the body of our humiliation to be conformed to the body of his glory, according to the working by which he is able even to subject all things to himself.",
+      "hyp": "He has put all things under his feet, and gave him to be head over all things for the assembly,"
+    }
+  ]
+}

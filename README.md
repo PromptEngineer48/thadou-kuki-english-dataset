@@ -124,3 +124,15 @@ Ollama: `thadou` (v1), `thadou-v2`. Hugging Face (private): `Prompt48/thadou-kuk
 
 **Lesson:** adding a third Bible mostly changed *which* Bible style the model imitates. Everyday
 native-speaker sentences remain the real bottleneck.
+
+## Using the models locally
+```bash
+cd runs/thadou-qwen3-4b-v2/gguf_gguf && ollama create thadou-v2 -f Modelfile   # v1: runs/thadou-qwen3-4b/...
+python translate.py "God loves you."                        # English -> Thadou (v2 by default)
+python translate.py -r "Kapa le kanu chu inn ah aum uve."   # Thadou -> English
+python translate.py -m thadou "God loves you."              # use v1
+python translate.py                                         # interactive
+```
+**Don't use `ollama run` / `/api/chat` directly.** Ollama's built-in Qwen3 renderer overrides the Modelfile
+TEMPLATE and the model emits stray `<think>` / `<tool_call>` tags (passing `think: false` makes it worse).
+`translate.py` calls `/api/generate` in raw mode with the exact training prompt format and strips leftovers.

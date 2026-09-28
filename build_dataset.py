@@ -62,10 +62,24 @@ for g in merge_ranges(vref):
     if 0.4 < r < 3.0:
         rows.append(g)
 
+# 3rd Thadou translation: BSI (THADBSI) paired with NIV, used with the rights holders' permission.
+# Keyed "GEN.1.1" -> our "GEN 1:1". Added to TRAIN ONLY so val/test stay identical to v1.
+bsi = {}
+bsi_path = ROOT / "incoming" / "thadou_kuki_niv_parallel.jsonl"
+if bsi_path.exists():
+    for line in open(bsi_path, encoding="utf-8"):
+        r = json.loads(line)
+        book, ch, v = r["id"].split(".")
+        bsi[f"{book} {ch}:{v}"] = (r["thadou_kuki"].strip(), r["english"].strip())
+for g in rows:
+    t, e = bsi.get(g["ref"], ("", ""))
+    g["tcz_bsi"], g["en_niv"] = (t, e) if t and e and 0.4 < len(t) / len(e) < 3.0 else ("", "")
+
 with open(OUT / "parallel.tsv", "w", encoding="utf-8") as f:
-    f.write("ref\ttcz\ten_web\ten_kjv\ttcz_gospelgo\n")
+    f.write("ref\ttcz\ten_web\ten_kjv\ttcz_gospelgo\ttcz_bsi\ten_niv\n")
     for g in rows:
-        f.write("\t".join(x.replace("\t", " ") for x in (g["ref"], g["tcz"], g["en_web"], g["en_kjv"], g["tcz2"])) + "\n")
+        f.write("\t".join(x.replace("\t", " ") for x in (g["ref"], g["tcz"], g["en_web"], g["en_kjv"],
+                                                         g["tcz2"], g["tcz_bsi"], g["en_niv"])) + "\n")
 
 SYS = "You are an expert translator between Thadou-Kuki (Thado Chin) and English."
 T2E = ["Translate this Thadou-Kuki text into English:", "Thadou-Kuki to English:",
@@ -90,6 +104,12 @@ for g in rows:
     if g["tcz2"] and 0.4 < len(g["tcz2"]) / len(g["en_web"]) < 3.0:  # second translation = more variety
         splits[s].append(ex(random.choice(T2E), g["tcz2"], g["en_web"]))
         splits[s].append(ex(random.choice(E2T), g["en_web"], g["tcz2"]))
+    if s == "train" and g["tcz_bsi"]:       # BSI Thadou <-> NIV: standard dialect + modern English
+        splits[s].append(ex(random.choice(T2E), g["tcz_bsi"], g["en_niv"]))
+        splits[s].append(ex(random.choice(E2T), g["en_niv"], g["tcz_bsi"]))
+        if random.random() < 0.3:           # cross-pair so the model doesn't tie a dialect to one English style
+            splits[s].append(ex(random.choice(T2E), g["tcz_bsi"], g["en_web"]))
+            splits[s].append(ex(random.choice(E2T), g["en_niv"], g["tcz"]))
 
 for s, items in splits.items():
     random.shuffle(items)

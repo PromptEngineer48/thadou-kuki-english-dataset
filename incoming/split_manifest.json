@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-09-27T14:10:10+00:00",
+  "method": "whole-book split; bucket = int(sha256(book_code)[:8], 16) mod 10",
+  "buckets": {
+    "train": "0-7 (target ~80%)",
+    "validation": "8 (target ~10%)",
+    "test": "9 (target ~10%)"
+  },
+  "books": {
+    "train": [
+      "1CH",
+      "1CO",
+      "1JN",
+      "1KI",
+      "1PE",
+      "1SA",
+      "1TH",
+      "1TI",
+      "2CH",
+      "2CO",
+      "2JN",
+      "2KI",
+      "2PE",
+      "2TH",
+      "2TI",
+      "ACT",
+      "AMO",
+      "COL",
+      "DEU",
+      "ECC",
+      "EPH",
+      "EST",
+      "EXO",
+      "EZK",
+      "GAL",
+      "GEN",
+      "HAG",
+      "HEB",
+      "JAS",
+      "JDG",
+      "JER",
+      "JHN",
+      "JOB",
+      "JOL",
+      "JON",
+      "JOS",
+      "JUD",
+      "LAM",
+      "LEV",
+      "LUK",
+      "MAL",
+      "MAT",
+      "NAM",
+      "NEH",
+      "NUM",
+      "OBA",
+      "PHM",
+      "PHP",
+      "PRO",
+      "PSA",
+      "REV",
+      "ROM",
+      "SNG",
+      "TIT",
+      "ZEC"
+    ],
+    "validation": [
+      "2SA",
+      "3JN",
+      "HAB",
+      "ISA",
+      "MRK",
+      "RUT",
+      "ZEP"
+    ],
+    "test": [
+      "DAN",
+      "EZR",
+      "HOS",
+      "MIC"
+    ]
+  },
+  "counts": {
+    "train": {
+      "verses": 27279,
+      "books": 55
+    },
+    "validation": {
+      "verses": 2869,
+      "books": 7
+    },
+    "test": {
+      "verses": 939,
+      "books": 4
+    }
+  },
+  "total_parallel_verses": 31087
+}

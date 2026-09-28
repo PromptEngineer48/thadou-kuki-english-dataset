@@ -5,8 +5,8 @@ Rebuild: `python build_dataset.py` (reads `raw/`, writes `out/`).
 ## Current contents (from eBible corpus)
 | File | What |
 |---|---|
-| `out/parallel.tsv` | 30,814 verse-aligned rows: ref, Thadou (Chongthu), English (WEB), English (KJV), Thadou (gospelgo, 13k verses) |
-| `out/train.jsonl` | 95,241 chat-format SFT examples, both directions |
+| `out/parallel.tsv` | 30,814 verse-aligned rows: ref, Thadou (Chongthu), English (WEB), English (KJV), Thadou (gospelgo), Thadou (BSI), English (NIV) |
+| `out/train.jsonl` | 173,845 chat-format SFT examples, both directions |
 | `out/val.jsonl` / `out/test.jsonl` | held-out BOOKS (Obad, Titus, Phlm, 2Jn, Nah / Ruth, Jonah, Phil, Jude, 3Jn) |
 | `out/rag_corpus.jsonl` | one doc per verse with both languages, for embeddings |
 | `out/lexicon_candidates.tsv` | auto word-alignment hints (mostly proper nouns; needs human review) |
@@ -14,6 +14,15 @@ Rebuild: `python build_dataset.py` (reads `raw/`, writes `out/`).
 Thadou text = **Pathen Lekhabu Theng, Chongthu dialect**, © 2020 Chongthu Bible Translation Team,
 licensed **CC BY-SA 4.0** (attribution + share-alike; derived datasets/models must credit it and use the same license).
 English = World English Bible + KJV (public domain).
+
+### Third Thadou translation: BSI + NIV (permissioned)
+`incoming/thadou_kuki_niv_parallel.jsonl` (31,087 verses, from the pdoungel fork): **Pathen Thutheng BU
+(THADBSI)** © Bible Society of India, paired with the **NIV** © Biblica/Zondervan. The repo owner states
+he holds permission from both rights holders for this use; that permission is what this data rests on,
+so keep it private and re-check before any public release.
+Only 4 of 30,797 shared verses match our Chongthu text, so it is a genuinely distinct translation:
+standard Thadou dialect + modern English, which is exactly what v1 lacked.
+Added to **train only** — `val.jsonl`/`test.jsonl` are byte-identical to v1 so scores stay comparable.
 
 ## Other sources (collect manually / with permission)
 | Source | Notes |
